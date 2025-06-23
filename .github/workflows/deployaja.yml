@@ -11,10 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Deploy Application
-        uses: deployaja/deployaja-cli@main
-        with:
-          command: 'deploy'
-          api-token: ${{ secrets.DEPLOYAJA_API_TOKEN }}
-          environment: 'production'
-          project-name: 'gatotkaca-14-app' 
+      - name: Deploy to DeployAja via API
+        run: |
+          # PENTING: Ganti URL di bawah ini dengan URL API dari DeployAja
+          curl -X POST \
+            -H "Authorization: Bearer ${{ secrets.DEPLOYAJA_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "project": "gatotkaca-14-app"
+            }' \
+            https://api.deployaja.com/v1/deployments 
