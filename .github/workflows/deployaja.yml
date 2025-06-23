@@ -1,4 +1,4 @@
-name: Deploy to DeployAja (Manual)
+name: Deploy to DeployAja
 
 on:
   workflow_dispatch:
