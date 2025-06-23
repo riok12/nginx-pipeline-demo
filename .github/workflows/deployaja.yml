@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Deploy Application
-        uses: deployaja/deployaja-cli@v1
+        uses: deployaja/deployaja-cli@main
         with:
           command: 'deploy'
           api-token: ${{ secrets.DEPLOYAJA_API_TOKEN }}
