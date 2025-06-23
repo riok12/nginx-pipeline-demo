@@ -14,7 +14,7 @@ jobs:
       - name: Deploy to DeployAja via API
         run: |
           # PENTING: Ganti URL di bawah ini dengan URL API dari DeployAja
-          curl -X POST \
+          curl -k -X POST \
             -H "Authorization: Bearer ${{ secrets.DEPLOYAJA_API_TOKEN }}" \
             -H "Content-Type: application/json" \
             -d '{
