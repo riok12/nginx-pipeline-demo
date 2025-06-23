@@ -1,17 +1,17 @@
-name: Deploy to DeployAja
+name: Deploy with DeployAja
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
+      
       - name: Deploy Application
-        uses: deployaja/deployaja-cli@main
+        uses: deployaja/deployaja-cli@v1
         with:
           command: 'deploy'
           api-token: ${{ secrets.DEPLOYAJA_API_TOKEN }}
