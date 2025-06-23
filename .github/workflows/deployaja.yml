@@ -8,11 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Deploy to DeployAja
-        uses: deployaja/github-action@v1
+      - name: Deploy Application
+        uses: deployaja/deployaja-cli@v1
         with:
-          api_token: ${{ secrets.DEPLOYAJA_API_TOKEN }}
-          project: gatotkaca-14-app
-          config: deployaja.yaml 
+          command: 'deploy'
+          api-token: ${{ secrets.DEPLOYAJA_API_TOKEN }}
+          environment: 'production'
+          project-name: 'gatotkaca-14-app' 
