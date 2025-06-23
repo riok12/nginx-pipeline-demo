@@ -20,4 +20,4 @@ jobs:
             -d '{
               "project": "gatotkaca-14-app"
             }' \
-            https://api.deployaja.com/v1/deployments 
+            https://api.deployaja.id/v1/deployments 
